@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,15 +8,19 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="index.js"></script>
 </head>
-<body>
+ <body>
+    <!-- Animated Background -->
+    <div class="bg-animation" id="bg-animation"></div>
+
     <!-- Header -->
     <header>
         <nav class="container">
-            <div class="logo">⚡ EcoSmart</div>
+            <div class="logo">EcoSmart Pro</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
                 <li><a href="#features">Features</a></li>
-                <li><a href="#stats">Energy Stats</a></li>
+                <li><a href="#monitor">Monitor</a></li>
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -27,149 +31,195 @@
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <h1>Smart Energy Saver</h1>
-                <p>Revolutionize energy efficiency in your home or hostel with AI-powered smart technology</p>
-                <a href="#features" class="cta-button">Discover How It Works</a>
+                <h1>Next-Gen Energy Intelligence</h1>
+                <p>Transform your space with AI-powered energy optimization that learns, adapts, and saves automatically</p>
+                
+                <div class="cta-group">
+                    <a href="#dashboard" class="cta-button">
+                        <span>🚀</span> Explore Dashboard
+                    </a>
+                    <a href="#contact" class="cta-button cta-secondary">
+                        <span>📞</span> Free Consultation
+                    </a>
+                </div>
+
+                <!-- Interactive Dashboard Preview -->
+                <div class="dashboard-preview">
+                    <h3 style="margin-bottom: 1rem;">Live Energy Dashboard</h3>
+                    <p style="opacity: 0.8; margin-bottom: 2rem;">Real-time monitoring of your energy consumption</p>
+                    
+                    <div class="dashboard-grid">
+                        <div class="dashboard-card" onclick="animateValue(this, 245, 'kW')">
+                            <div class="dashboard-value" data-value="245">0</div>
+                            <div>Current Usage</div>
+                        </div>
+                        <div class="dashboard-card" onclick="animateValue(this, 32, '%')">
+                            <div class="dashboard-value" data-value="32">0</div>
+                            <div>Savings Today</div>
+                        </div>
+                        <div class="dashboard-card" onclick="animateValue(this, 89, '°F')">
+                            <div class="dashboard-value" data-value="89">0</div>
+                            <div>Optimal Temp</div>
+                        </div>
+                        <div class="dashboard-card" onclick="animateValue(this, 1247, '$')">
+                            <div class="dashboard-value" data-value="1247">0</div>
+                            <div>Monthly Savings</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section class="features" id="features">
+    <section class="features scroll-reveal" id="features">
         <div class="container">
-            <h2 class="section-title">Intelligent Energy Management</h2>
+            <h2 class="section-title">Revolutionary Features</h2>
+            <p class="section-subtitle">Experience the future of energy management with cutting-edge technology</p>
             
             <div class="features-grid">
-                <div class="feature-card fade-in">
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>AI-Powered Learning</h3>
+                    <p>Advanced machine learning algorithms that adapt to your lifestyle patterns and automatically optimize energy usage without sacrificing comfort.</p>
+                </div>
+                
+                <div class="feature-card">
                     <div class="feature-icon">🏠</div>
-                    <h3>Smart Home Integration</h3>
-                    <p>Seamlessly connects with all your home appliances, lights, and HVAC systems for comprehensive energy monitoring and control.</p>
+                    <h3>Smart Home Ecosystem</h3>
+                    <p>Seamlessly integrates with 500+ smart devices, creating a unified energy management system for your entire property.</p>
                 </div>
                 
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">🏨</div>
-                    <h3>Hostel Management</h3>
-                    <p>Advanced multi-room energy tracking perfect for hostels, dormitories, and shared living spaces with individual usage monitoring.</p>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Predictive Analytics</h3>
+                    <p>Forecast energy demand, predict maintenance needs, and prevent wastage with sophisticated predictive modeling.</p>
                 </div>
                 
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">🤖</div>
-                    <h3>AI-Powered Optimization</h3>
-                    <p>Machine learning algorithms analyze usage patterns to automatically optimize energy consumption without compromising comfort.</p>
+                <div class="feature-card">
+                    <div class="feature-icon">🔋</div>
+                    <h3>Battery Optimization</h3>
+                    <p>Intelligent battery management for solar storage systems, maximizing renewable energy utilization and grid independence.</p>
                 </div>
                 
-                <div class="feature-card fade-in">
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>IoT Integration</h3>
+                    <p>Connect and control all IoT devices through a single platform with real-time monitoring and automated responses.</p>
+                </div>
+                
+                <div class="feature-card">
                     <div class="feature-icon">📱</div>
-                    <h3>Mobile App Control</h3>
-                    <p>Complete control from anywhere with our intuitive mobile app featuring real-time monitoring, scheduling, and notifications.</p>
-                </div>
-                
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">💡</div>
-                    <h3>Smart Lighting</h3>
-                    <p>Automated lighting control based on occupancy, natural light levels, and user preferences to maximize energy savings.</p>
-                </div>
-                
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">🌡️</div>
-                    <h3>Climate Control</h3>
-                    <p>Intelligent temperature management that learns your schedule and preferences to maintain comfort while minimizing energy use.</p>
+                    <h3>Mobile Command Center</h3>
+                    <p>Full control from anywhere with our award-winning mobile app featuring AR visualization and voice commands.</p>
                 </div>
             </div>
 
-            <!-- Energy Calculator -->
+            <!-- Advanced Energy Calculator -->
             <div class="calculator">
-                <h3>💰 Energy Savings Calculator</h3>
-                <p>Calculate your potential monthly savings with EcoSmart</p>
-                <div class="calc-input">
-                    <input type="number" id="monthlyBill" placeholder="Current Monthly Bill ($)">
-                    <input type="number" id="squareFeet" placeholder="Property Size (sq ft)">
-                    <button onclick="calculateSavings()" class="cta-button">Calculate Savings</button>
+                <h3 style="color: rgb(35, 30, 30); font-size: 2rem; margin-bottom: 1rem;">💡 Advanced Savings Calculator</h3>
+                <p style="color: rgba(36, 31, 31, 0.8); margin-bottom: 2rem;">Get a personalized energy savings estimate based on your specific situation</p>
+                
+                <div class="calc-grid">
+                    <div class="calc-input-group">
+                        <input type="number" class="calc-input" id="monthlyBill" placeholder="Monthly Energy Bill ($)">
+                    </div>
+                    <div class="calc-input-group">
+                        <input type="number" class="calc-input" id="squareFeet" placeholder="Property Size (sq ft)">
+                    </div>
+                    <div class="calc-input-group">
+                        <select class="calc-input" id="propertyType">
+                            <option value="home">Single Family Home</option>
+                            <option value="apartment">Apartment</option>
+                            <option value="hostel">Hostel/Dormitory</option>
+                            <option value="office">Office Building</option>
+                        </select>
+                    </div>
+                    <div class="calc-input-group">
+                        <input type="number" class="calc-input" id="occupants" placeholder="Number of Occupants">
+                    </div>
                 </div>
+                
+                <button onclick="calculateAdvancedSavings()" class="cta-button" style="width: 100%;">
+                    Calculate My Savings
+                </button>
+                
                 <div id="calcResult" class="calc-result">
-                    <h4>Your Potential Savings:</h4>
-                    <p id="savingsAmount"></p>
-                    <p id="annualSavings"></p>
+                    <h4 style="margin-bottom: 1rem;">Your Personalized Savings Report</h4>
+                    <div id="savingsDetails"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Energy Stats Section -->
-    <section class="energy-stats" id="stats">
+    <!-- Interactive Energy Monitor -->
+    <section class="energy-monitor scroll-reveal" id="monitor">
         <div class="container">
-            <h2 class="section-title">Proven Results</h2>
-            
-            <div class="stats-grid">
-                <div class="stat-card fade-in">
-                    <span class="stat-number" data-target="35">0</span>
-                    <div class="stat-label">% Average Energy Savings</div>
+            <div class="monitor-container">
+                <h2 class="section-title" style="color: white;">Real-Time Energy Monitoring</h2>
+                <p style="text-align: center; opacity: 0.8; margin-bottom: 3rem;">Watch your energy consumption in real-time with interactive charts and insights</p>
+                
+                <div class="energy-chart" id="energyChart">
+                    <!-- Dynamic chart bars will be generated here -->
                 </div>
                 
-                <div class="stat-card fade-in">
-                    <span class="stat-number" data-target="2500">0</span>
-                    <div class="stat-label">Homes & Hostels Connected</div>
-                </div>
-                
-                <div class="stat-card fade-in">
-                    <span class="stat-number" data-target="1.2">0</span>
-                    <div class="stat-label">Million kWh Saved</div>
-                </div>
-                
-                <div class="stat-card fade-in">
-                    <span class="stat-number" data-target="98">0</span>
-                    <div class="stat-label">% Customer Satisfaction</div>
+                <div style="display: flex; justify-content: space-between; margin-top: 2rem; flex-wrap: wrap; gap: 1rem;">
+                    <button onclick="updateChart('day')" class="cta-button cta-secondary">24 Hours</button>
+                    <button onclick="updateChart('week')" class="cta-button cta-secondary">7 Days</button>
+                    <button onclick="updateChart('month')" class="cta-button cta-secondary">30 Days</button>
+                    <button onclick="startRealTime()" class="cta-button">Start Live Demo</button>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Pricing Section -->
-    <section class="pricing" id="pricing">
+    <section class="pricing scroll-reveal" id="pricing">
         <div class="container">
-            <h2 class="section-title">Choose Your Plan</h2>
+            <h2 class="section-title">Choose Your Energy Plan</h2>
+            <p class="section-subtitle">Flexible plans designed to scale with your energy needs</p>
             
             <div class="pricing-grid">
-                <div class="pricing-card fade-in">
-                    <h3>Home Basic</h3>
-                    <div class="price">$29</div>
-                    <div class="price-period">per month</div>
-                    <ul class="pricing-features">
-                        <li>Up to 10 smart devices</li>
-                        <li>Basic energy monitoring</li>
-                        <li>Mobile app access</li>
-                        <li>Email support</li>
-                        <li>Monthly reports</li>
+                <div class="pricing-card">
+                    <h3>Smart Home</h3>
+                    <div class="price" style="font-size: 3rem; font-weight: bold; color: #667eea;">$39</div>
+                    <div style="color: #666; margin-bottom: 2rem;">per month</div>
+                    <ul style="list-style: none; margin-bottom: 2rem;">
+                        <li style="padding: 0.5rem 0;">✓ Up to 15 smart devices</li>
+                        <li style="padding: 0.5rem 0;">✓ AI-powered optimization</li>
+                        <li style="padding: 0.5rem 0;">✓ Mobile app access</li>
+                        <li style="padding: 0.5rem 0;">✓ 24/7 monitoring</li>
+                        <li style="padding: 0.5rem 0;">✓ Basic analytics</li>
                     </ul>
                     <a href="#contact" class="cta-button">Get Started</a>
                 </div>
                 
-                <div class="pricing-card popular fade-in">
-                    <h3>Home Pro</h3>
-                    <div class="price">$49</div>
-                    <div class="price-period">per month</div>
-                    <ul class="pricing-features">
-                        <li>Unlimited smart devices</li>
-                        <li>Advanced AI optimization</li>
-                        <li>Real-time alerts</li>
-                        <li>24/7 phone support</li>
-                        <li>Weekly detailed reports</li>
-                        <li>Smart scheduling</li>
+                <div class="pricing-card featured">
+                    <h3>Smart Pro</h3>
+                    <div class="price" style="font-size: 3rem; font-weight: bold;">$79</div>
+                    <div style="opacity: 0.8; margin-bottom: 2rem;">per month</div>
+                    <ul style="list-style: none; margin-bottom: 2rem;">
+                        <li style="padding: 0.5rem 0;">✓ Unlimited smart devices</li>
+                        <li style="padding: 0.5rem 0;">✓ Advanced AI learning</li>
+                        <li style="padding: 0.5rem 0;">✓ Predictive analytics</li>
+                        <li style="padding: 0.5rem 0;">✓ Voice control integration</li>
+                        <li style="padding: 0.5rem 0;">✓ Priority support</li>
+                        <li style="padding: 0.5rem 0;">✓ Custom automation</li>
                     </ul>
                     <a href="#contact" class="cta-button">Most Popular</a>
                 </div>
                 
-                <div class="pricing-card fade-in">
-                    <h3>Hostel Enterprise</h3>
-                    <div class="price">$149</div>
-                    <div class="price-period">per month</div>
-                    <ul class="pricing-features">
-                        <li>Multi-room management</li>
-                        <li>Individual usage tracking</li>
-                        <li>Bulk billing features</li>
-                        <li>Admin dashboard</li>
-                        <li>Custom integrations</li>
-                        <li>On-site installation</li>
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <div class="price" style="font-size: 3rem; font-weight: bold; color: #667eea;">$199</div>
+                    <div style="color: #666; margin-bottom: 2rem;">per month</div>
+                    <ul style="list-style: none; margin-bottom: 2rem;">
+                        <li style="padding: 0.5rem 0;">✓ Multi-building management</li>
+                        <li style="padding: 0.5rem 0;">✓ Advanced reporting</li>
+                        <li style="padding: 0.5rem 0;">✓ API access</li>
+                        <li style="padding: 0.5rem 0;">✓ Dedicated account manager</li>
+                        <li style="padding: 0.5rem 0;">✓ On-site installation</li>
+                        <li style="padding: 0.5rem 0;">✓ Custom integrations</li>
                     </ul>
                     <a href="#contact" class="cta-button">Contact Sales</a>
                 </div>
@@ -178,53 +228,95 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contact" id="contact">
+    <section class="contact scroll-reveal" id="contact">
         <div class="container">
-            <h2 class="section-title">Get Started Today</h2>
-            <p>Ready to transform your energy consumption? Contact us for a free consultation.</p>
-            
-            <form class="contact-form" onsubmit="handleSubmit(event)">
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2 style="font-size: 3rem; margin-bottom: 2rem;">Ready to Start Saving?</h2>
+                    <p style="font-size: 1.2rem; margin-bottom: 3rem; opacity: 0.9;">Join thousands of satisfied customers who are already saving 30-50% on their energy bills.</p>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <h4 style="margin-bottom: 1rem;">🏆 Why Choose EcoSmart Pro?</h4>
+                        <ul style="list-style: none;">
+                            <li style="padding: 0.5rem 0;">✓ Average 35% energy savings</li>
+                            <li style="padding: 0.5rem 0;">✓ ROI within 12 months</li>
+                            <li style="padding: 0.5rem 0;">✓ 24/7 expert support</li>
+                            <li style="padding: 0.5rem 0;">✓ 30-day money-back guarantee</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 style="margin-bottom: 1rem;">📞 Contact Information</h4>
+                        <p style="margin-bottom: 0.5rem;">📧 hello@ecosmart-pro.com</p>
+                        <p style="margin-bottom: 0.5rem;">📱 1-800-ECO-SMART</p>
+                        <p style="margin-bottom: 0.5rem;">🏢 123 Green Energy Ave, Tech City</p>
+                    </div>
                 </div>
                 
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
-                </div>
-                
-                <div class="form-group">
-                    <label for="property">Property Type</label>
-                    <select id="property" name="property" style="width: 100%; padding: 15px; border: none; border-radius: 10px; background: rgba(255,255,255,0.1); color: white; backdrop-filter: blur(10px);">
-                        <option value="" style="color: #333;">Select property type</option>
-                        <option value="home" style="color: #333;">Home/Apartment</option>
-                        <option value="hostel" style="color: #333;">Hostel/Dormitory</option>
-                        <option value="business" style="color: #333;">Business/Office</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" placeholder="Tell us about your energy saving goals..."></textarea>
-                </div>
-                
-                <button type="submit" class="submit-btn">Request Free Consultation</button>
-            </form>
+                <form class="contact-form" onsubmit="handleAdvancedSubmit(event)">
+                    <h3 style="margin-bottom: 2rem; text-align: center;">Get Your Free Consultation</h3>
+                    
+                    <div class="form-group">
+                        <input type="text" class="form-input" placeholder="Full Name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" class="form-input" placeholder="Email Address" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="tel" class="form-input" placeholder="Phone Number">
+                    </div>
+                    
+                    <div class="form-group">
+                        <select class="form-input" style="color: rgba(255,255,255,0.8);">
+                            <option value="" style="color: #333;">Select Property Type</option>
+                            <option value="home" style="color: #333;">Single Family Home</option>
+                            <option value="apartment" style="color: #333;">Apartment/Condo</option>
+                            <option value="hostel" style="color: #333;">Hostel/Dormitory</option>
+                            <option value="office" style="color: #333;">Office Building</option>
+                            <option value="retail" style="color: #333;">Retail Space</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea class="form-input" rows="4" placeholder="Tell us about your energy goals and current challenges..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        Schedule Free Consultation
+                    </button>
+                </form>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer style="background: #1a1a1a; color: white; padding: 3rem 0; text-align: center;">
         <div class="container">
-            <p>&copy; 2025 EcoSmart Energy Solutions. All rights reserved.</p>
-            <p>Transforming energy consumption, one smart home at a time.</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <div>
+                    <h4 style="margin-bottom: 1rem;">EcoSmart Pro</h4>
+                    <p style="opacity: 0.8;">Revolutionary energy management for the modern world</p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1rem;">Quick Links</h4>
+                    <p><a href="#features" style="color: #00ff88; text-decoration: none;">Features</a></p>
+                    <p><a href="#pricing" style="color: #00ff88; text-decoration: none;">Pricing</a></p>
+                    <p><a href="#contact" style="color: #00ff88; text-decoration: none;">Contact</a></p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1rem;">Follow Us</h4>
+                    <div style="display: flex; gap: 1rem; justify-content: center;">
+                        <span style="cursor: pointer; font-size: 1.5rem;">📘</span>
+                        <span style="cursor: pointer; font-size: 1.5rem;">🐦</span>
+                        <span style="cursor: pointer; font-size: 1.5rem;">📷</span>
+                        <span style="cursor: pointer; font-size: 1.5rem;">💼</span>
+                    </div>
+                </div>
+            </div>
+            <p style="opacity: 0.6; margin-top: 2rem;">&copy; 2025 EcoSmart Pro. All rights reserved. | Transforming energy consumption worldwide.</p>
         </div>
     </footer>
-</body>
+ </body>
 </html>
