@@ -253,40 +253,78 @@
                     </div>
                 </div>
                 
-                <form class="contact-form" onsubmit="handleAdvancedSubmit(event)">
-                    <h3 style="margin-bottom: 2rem; text-align: center;">Get Your Free Consultation</h3>
-                    
-                    <div class="form-group">
-                        <input type="text" class="form-input" placeholder="Full Name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="email" class="form-input" placeholder="Email Address" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="tel" class="form-input" placeholder="Phone Number">
-                    </div>
-                    
-                    <div class="form-group">
-                        <select class="form-input" style="color: rgba(255,255,255,0.8);">
-                            <option value="" style="color: #333;">Select Property Type</option>
-                            <option value="home" style="color: #333;">Single Family Home</option>
-                            <option value="apartment" style="color: #333;">Apartment/Condo</option>
-                            <option value="hostel" style="color: #333;">Hostel/Dormitory</option>
-                            <option value="office" style="color: #333;">Office Building</option>
-                            <option value="retail" style="color: #333;">Retail Space</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <textarea class="form-input" rows="4" placeholder="Tell us about your energy goals and current challenges..."></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn">
-                        Schedule Free Consultation
-                    </button>
-                </form>
+                 <div class="contact-form">
+    <form id="contactForm" class="contact-form" method="POST" action="https://api.web3forms.com/submit">
+
+        <h3 style="margin-bottom: 2rem; text-align: center;">Get Your Free Consultation</h3>
+
+        <!-- Web3Forms Access Key -->
+        <input type="hidden" name="access_key" value="ab2ce0a3-47a1-46ce-a35a-7212fe5d732d">
+
+        <div class="form-group">
+            <input type="text" class="form-input" name="name" placeholder="Full Name" required>
+        </div>
+
+        <div class="form-group">
+            <input type="email" class="form-input" name="email" placeholder="Email Address" required>
+        </div>
+
+        <div class="form-group">
+            <input type="tel" class="form-input" name="phone" placeholder="Phone Number">
+        </div>
+
+        <div class="form-group">
+            <select class="form-input" name="property_type" style="color: rgba(255,255,255,0.8);" required>
+                <option value="" style="color: #333;">Select Property Type</option>
+                <option value="home" style="color: #333;">Single Family Home</option>
+                <option value="apartment" style="color: #333;">Apartment/Condo</option>
+                <option value="hostel" style="color: #333;">Hostel/Dormitory</option>
+                <option value="office" style="color: #333;">Office Building</option>
+                <option value="retail" style="color: #333;">Retail Space</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <textarea class="form-input" name="message" rows="4" placeholder="Tell us about your energy goals and current challenges..." required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">
+            Schedule Free Consultation
+        </button>
+
+        <div class="success-message" id="successMessage" style="display: none; margin-top: 1rem;">
+            <h5>✅ Message Sent Successfully!</h5>
+            <p>Thank you for reaching out. I'll get back to you soon!</p>
+        </div>
+
+    </form>
+</div>
+
+<!-- ⭐ Web3Forms Submission Script -->
+<script>
+document.getElementById('contactForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const form = event.target;
+
+    fetch(form.action, {
+        method: form.method,
+        body: new FormData(form)
+    })
+    .then(response => response.json())
+    .then(result => {
+        if (result.success) {
+            document.getElementById('successMessage').style.display = 'block';
+            form.reset();
+        } else {
+            alert("❌ Error sending message. Please try again.");
+        }
+    })
+    .catch(() => {
+        alert("❌ Something went wrong!");
+    });
+});
+</script>
             </div>
         </div>
     </section>
@@ -320,3 +358,4 @@
     </footer>
  </body>
 </html>
+
